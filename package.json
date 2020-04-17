@@ -1,7 +1,7 @@
 {
   "name": "newjulfa",
   "version": "1.0.0",
-  "description": "Նոր Ջուղայի առեւտրական ցանցը",
+  "description": "Նոր Ջուղայի առևտրական ցանցը",
   "main": "app.js",
   "scripts": {
     "devStart": "nodemon server.js",
@@ -16,7 +16,8 @@
   },
   "keywords": [
     "New",
-    "Julfa"
+    "Julfa",
+    "ArmHist"
   ],
   "author": "GGC_",
   "license": "LGPL-3.0",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/MRGGC/NewJulfa#readme",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.2.0",
