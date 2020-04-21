@@ -3,6 +3,7 @@
 const SaveController = require("../controllers/SaveController")
 
 module.exports = async (router) => {
-    router.get("/saveget", SaveController.Infogetter);
-    router.get("/saveadd", SaveController.Infoadder);
+    router.get("/save/dataget", SaveController.dataInfogetter);
+    router.get("/save/dataadd", SaveController.dataInfoadder);
+    router.get("/save/coordinatesget", SaveController.coordinatesInfogetter);
 };

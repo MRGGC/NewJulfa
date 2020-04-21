@@ -1,14 +1,15 @@
 "use strict";
 const Sequelize = require("sequelize");
 const Data = require("../models/data.js");
+const fs = require("fs")
 
 
-async function Infogetter(req, res) {
+async function dataInfogetter(req, res) {
   const info = await Data.findAll();
   res.send(info);
 }
 
-async function Infoadder(req, res){
+async function dataInfoadder(req, res){
   const data = req.body;
   const newthing = await Data.create({
     id: data.id,
@@ -21,7 +22,19 @@ async function Infoadder(req, res){
   res.send(newthing)
 }
 
+async function coordinatesInfogetter(req, res) {
+  fs.readFile("Coordinates.json", (err, data) => {
+    if(err){
+      console.log(err)
+    }
+    res.send(data)
+  })
+}
+
+
+
 module.exports = {
-  Infogetter,
-  Infoadder
+  dataInfogetter,
+  dataInfoadder,
+  coordinatesInfogetter
 }

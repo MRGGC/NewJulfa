@@ -1,0 +1,42 @@
+{
+            "1680": [
+                {
+                    "latLng": [
+                        40.372338,
+                        44.85211
+                    ],
+                    "name": "angirstan",
+                    "text": "this place is known for angir",
+                    "status": "new"
+                },
+                {
+                    "latLng": [
+                        40.372338,
+                        44.85211
+                    ],
+                    "name": "angirstan 2",
+                    "text": "this place is even more known for angir",
+                    "status": "alive"
+                }
+            ],
+            "1690": [
+                {
+                    "latLng": [
+                        40.372338,
+                        45.85211
+                    ],
+                    "name": "krinj",
+                    "text": "lmao exdddddd",
+                    "status": "dead"
+                },
+                {
+                    "latLng": [
+                        40.372338,
+                        43.85211
+                    ],
+                    "name": "angirstan 69",
+                    "text": "this is text info about node kthx",
+                    "status": "dead"
+                }
+            ]
+        }
