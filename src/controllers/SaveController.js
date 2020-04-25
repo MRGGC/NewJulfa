@@ -11,6 +11,13 @@ async function dataInfogetter(req, res) {
 
 async function dataInfoadder(req, res){
   const data = req.body;
+  try{
+    await Data.destroy({ where: {id: data.id} });
+  }
+  catch(e){
+    console.log(e)
+  }
+  finally{
   const newthing = await Data.create({
     id: data.id,
     icon: data.icon,
@@ -20,6 +27,7 @@ async function dataInfoadder(req, res){
     updatedAt: data.updatedAt
   })
   res.send(newthing)
+}
 }
 
 async function coordinatesInfogetter(req, res) {
