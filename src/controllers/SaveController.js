@@ -1,33 +1,41 @@
 "use strict";
 const Sequelize = require("sequelize");
 const Data = require("../models/data.js");
-const fs = require("fs")
-
+const fs = require("fs");
 
 async function dataInfogetter(req, res) {
-  const info = await Data.findAll();
-  res.send(info);
+  const info = fs.readFileSync("Content.json", {encoding:'utf8', flag:'r'});
+  console.log(info);
+  res.send(JSON.parse(info));
 }
 
 async function dataInfoadder(req, res){
-  const data = req.body;
-  try{
-    await Data.destroy({ where: {id: data.id} });
-  }
-  catch(e){
-    console.log(e)
-  }
-  finally{
-  const newthing = await Data.create({
-    id: data.id,
-    icon: data.icon,
-    link_text: data.link_text,
-    content: data.content,
-    createdAt: data.createdAt,
-    updatedAt: data.updatedAt
-  })
-  res.send(newthing)
-}
+  console.log(req.body);
+  fs.writeFileSync("Content.json", JSON.stringify(req.body));
+
+  res.send({ success: true });
+
+  // try{
+  //   await Data.destroy({ where: {} });
+  // }
+  // catch(e){
+  //   console.log(e)
+  //   res.send({ success: false });
+  // }
+  // finally{
+  //   for (let content of list) {
+  //     await Data.create({
+  //       id: content.id,
+  //       icon: content.icon,
+  //       link_text: content.link_text,
+  //       content: content.content,
+  //       createdAt: new Date(),
+  //       updatedAt: new Date()
+  //     });
+  //     console.log(content.content);
+  //   }
+  //   res.send({ success: true });
+  // }
 }
 
 async function coordinatesInfogetter(req, res) {

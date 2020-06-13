@@ -3,5 +3,5 @@
 const AuthController = require("../controllers/AuthController");
 
 module.exports = async (router) => {
-    router.get("/admin", AuthController.Login);
+    router.post("/login", AuthController.Login);
 };
